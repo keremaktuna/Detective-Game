@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b4a24d0e4a28423fb3249b923d7e418, type: 3}
+  m_Name: Evidence_ManagerPackage
+  m_EditorClassIdentifier: 
+  actionsManager: {fileID: 11400000, guid: f97084bf9db6cd646b1a79987231335c, type: 2}
+  sceneManager: {fileID: 11400000, guid: 84f634816dea1d045acec12725e1a9b9, type: 2}
+  settingsManager: {fileID: 11400000, guid: a6cb120bbef51714aaa1b275bf87c350, type: 2}
+  inventoryManager: {fileID: 11400000, guid: b7b29ece4085b06438910016a8891d13, type: 2}
+  variablesManager: {fileID: 11400000, guid: e54f749ac29962f4a96883037dc63023, type: 2}
+  speechManager: {fileID: 11400000, guid: 65824993cb764ff4b9c957a98cb607eb, type: 2}
+  cursorManager: {fileID: 11400000, guid: 2d97ef75294954648ae542bc9278b054, type: 2}
+  menuManager: {fileID: 11400000, guid: b30a601513ff941438332e1aade1f960, type: 2}
