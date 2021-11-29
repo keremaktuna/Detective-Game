@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SettingsManager
   m_EditorClassIdentifier: 
   separateEditorSaveFiles: 0
-  saveFileName: 
+  saveFileName: Detective-Game
   saveTimeDisplay: 0
   customSaveFormat: MMMM dd, yyyy
   takeSaveScreenshots: 0
