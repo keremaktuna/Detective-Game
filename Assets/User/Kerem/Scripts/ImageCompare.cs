@@ -5,20 +5,39 @@ using UnityEngine;
 public class ImageCompare : MonoBehaviour
 {
     float similarityPercent;
-    public Texture2D first, second;
-    float imagePixelSize;
+    public Texture2D first, second, white, drawnImage;
+    float imagePixelSize, imageWithoutWhite;
+
+    [SerializeField] bool testFirst, testSecond;
 
     private void Start()
     {
         imagePixelSize = first.GetPixels().Length;
+
+        Color[] firstPic = first.GetPixels();
+        for (int a = 0; a < firstPic.Length; a++)
+        {
+            if (firstPic[a] != firstPic[1])
+            {
+                imageWithoutWhite++;
+            }
+        }
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.H))
+        if (testFirst)
         {
             Compare(first, second);
             Debug.Log(similarityPercent);
+            testFirst = false;
+        }
+
+        if (testSecond)
+        {
+            Compare(first, drawnImage);
+            Debug.Log(similarityPercent);
+            testSecond = false;
         }
     }
 
@@ -31,12 +50,21 @@ public class ImageCompare : MonoBehaviour
 
         for(int i = 0; i < firstPix.Length; i++)
         {
-            if(firstPix[i] == secondPix[i])
+            if (firstPix[i] != firstPix[1])
             {
-                similarityPercent++;
+                if (firstPix[i] == secondPix[i])
+                {
+                    similarityPercent++;
+                }
             }
+
         }
 
-        similarityPercent = (similarityPercent * 100) / imagePixelSize; 
+        similarityPercent = (similarityPercent * 100) / imageWithoutWhite; 
+    }
+    
+    public void getImage(Texture2D imageToGet)
+    {
+        drawnImage = imageToGet;
     }
 }
