@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class Painting : MonoBehaviour
 {
+    [Range(1, 100)]
     public int drawWidth;
 
     private RectTransform drawSurfaceRectTransform;
@@ -15,12 +16,8 @@ public class Painting : MonoBehaviour
 
     private Vector2 localPointerPosition;
 
-    public Texture2D savedImage;
-    [SerializeField] TextureImporterType importType;
-
     public GameObject compareImage;
 
-    // Use this for initialization
     void Start()
     {
         drawSurfaceRectTransform = this.gameObject.GetComponent<RectTransform>();
@@ -44,7 +41,6 @@ public class Painting : MonoBehaviour
         //Debug.Log(GetInstanceID() + " - Started");
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetMouseButton(0) || Input.GetMouseButton(1))
@@ -85,7 +81,6 @@ public class Painting : MonoBehaviour
         System.IO.File.WriteAllBytes(dirPath + assetName, bytes);
         Debug.Log(bytes.Length / 1024 + "Kb was saved as: " + dirPath);
         Debug.Log(assetName);
-        //GetRefferenceOfImage(assetNameAndPath);
         StartCoroutine(GetRefferenceOfImageWithDelay(assetName));
 #if UNITY_EDITOR
         AssetDatabase.Refresh();
@@ -102,17 +97,5 @@ public class Painting : MonoBehaviour
         imageConvert.LoadImage(bytes);
 
         compareImage.GetComponent<ImageCompare>().getImage(imageConvert);
-        /*AssetDatabase.ImportAsset(path, ImportAssetOptions.ForceUpdate);
-        TextureImporter texSettings = AssetImporter.GetAtPath(path) as TextureImporter;
-        if (!texSettings)
-        {
-            AssetDatabase.Refresh();
-            AssetDatabase.ImportAsset(path, ImportAssetOptions.ForceUpdate);
-            texSettings = AssetImporter.GetAtPath(path) as TextureImporter;
-        }
-        texSettings.isReadable = true;
-        texSettings.textureType = importType;
-
-        Debug.Log("Done");*/
     }
 }

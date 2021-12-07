@@ -17,7 +17,7 @@ public class ImageCompare : MonoBehaviour
         Color[] firstPic = first.GetPixels();
         for (int a = 0; a < firstPic.Length; a++)
         {
-            if (firstPic[a] != firstPic[1])
+            if (firstPic[a] == Color.black)
             {
                 imageWithoutWhite++;
             }
@@ -50,7 +50,7 @@ public class ImageCompare : MonoBehaviour
 
         for(int i = 0; i < firstPix.Length; i++)
         {
-            if (firstPix[i] != firstPix[1])
+            if (firstPix[i] == Color.black)
             {
                 if (firstPix[i] == secondPix[i])
                 {
