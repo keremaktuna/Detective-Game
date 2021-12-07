@@ -7,7 +7,16 @@ using TMPro;
 public class ClickableText : MonoBehaviour, IPointerClickHandler
 {
     string selectedPassword;
-
+    PasswordHack passwordHackScript;
+    UsernameHack usernameHackScript;
+    
+    private void Start()
+    {
+        if(gameObject.GetComponent<PasswordHack>() != null)
+            passwordHackScript = gameObject.GetComponent<PasswordHack>();
+        if (gameObject.GetComponent<UsernameHack>() != null)
+            usernameHackScript = gameObject.GetComponent<UsernameHack>();
+    }
     public void OnPointerClick(PointerEventData eventData)
     {
         var text = GetComponent<TextMeshProUGUI>();
@@ -20,14 +29,18 @@ public class ClickableText : MonoBehaviour, IPointerClickHandler
                 var linkID = linkInfo.GetLinkText();
 
                 selectedPassword = linkID;
-
-                gameObject.GetComponent<TestHack>().selectedPassword = linkID;
+                
+                if(passwordHackScript != null)
+                {
+                    passwordHackScript.selectedPassword = linkID;
+                    passwordHackScript.GetClickData(linkID);
+                }
+                else if(usernameHackScript != null)
+                {
+                    usernameHackScript.selectedUsername = linkID;
+                    usernameHackScript.GetClickData(linkID);
+                }
             }
-        }
-        if(selectedPassword != null)
-        {
-            gameObject.GetComponent<TestHack>().choseMainPassword();
-            selectedPassword = null;
         }
     }
 }
