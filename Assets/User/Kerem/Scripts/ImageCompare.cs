@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class ImageCompare : MonoBehaviour
 {
-    float similarityPercent;
-    public Texture2D first, second, white, drawnImage;
-    float imagePixelSize, imageWithoutWhite;
+    public float similarityPercent;
+    public Texture2D first, second;
+    [HideInInspector] public Texture2D drawnImage;
+    private float imageWithoutWhite;
 
     [SerializeField] bool testFirst, testSecond;
 
+    private PhoneHackScreen phoneHackScreen;
+
     private void Start()
     {
-        imagePixelSize = first.GetPixels().Length;
+        phoneHackScreen = gameObject.transform.parent.gameObject.GetComponent<PhoneHackScreen>();
 
         Color[] firstPic = first.GetPixels();
         for (int a = 0; a < firstPic.Length; a++)
@@ -61,10 +64,20 @@ public class ImageCompare : MonoBehaviour
         }
 
         similarityPercent = (similarityPercent * 100) / imageWithoutWhite; 
+
+        phoneHackScreen.GetImageCompareResult(similarityPercent);
     }
-    
+
     public void getImage(Texture2D imageToGet)
     {
         drawnImage = imageToGet;
+        Compare(first, drawnImage);
+        Debug.Log(similarityPercent);
+    }
+
+    public void CloseButton()
+    {
+        phoneHackScreen.ClosePaintingCanvas();
+        gameObject.SetActive(false);
     }
 }

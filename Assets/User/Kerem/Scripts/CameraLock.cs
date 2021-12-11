@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
+using AC;
 
 [ExecuteInEditMode]
 [SaveDuringPlay]
@@ -17,6 +18,11 @@ public class CameraLock : CinemachineExtension
     public bool ZLockEnabled = false;
     [Tooltip("Lock the camera's Z position to this value")]
     public float m_ZPosition = 0;
+
+    private void Start()
+    {
+        KickStarter.mainCamera.Enable();
+    }
 
     protected override void PostPipelineStageCallback(
         CinemachineVirtualCameraBase vcam,

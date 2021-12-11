@@ -6,9 +6,9 @@ using TMPro;
 
 public class ClickableText : MonoBehaviour, IPointerClickHandler
 {
-    string selectedPassword;
-    PasswordHack passwordHackScript;
-    UsernameHack usernameHackScript;
+    string selectedText;
+    private PasswordHack passwordHackScript;
+    private UsernameHack usernameHackScript;
     
     private void Start()
     {
@@ -28,7 +28,7 @@ public class ClickableText : MonoBehaviour, IPointerClickHandler
                 var linkInfo = text.textInfo.linkInfo[linkIndex];
                 var linkID = linkInfo.GetLinkText();
 
-                selectedPassword = linkID;
+                selectedText = linkID;
                 
                 if(passwordHackScript != null)
                 {

@@ -2,31 +2,35 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using AC;
 
 public class PasswordHack : MonoBehaviour
 {
     public TextAsset dataFile;
-    string[] names = new string[1000];
+    string[] namePool = new string[1000];
 
     private TextMeshProUGUI textField;
     string currentText;
-    int detectiveBirthYear = 1963;
-    public string characterName = "";
+    int detectiveBirthYear;
+    private string detectiveName;
     string[] currentPasswords = new string[3];
     string mainPassword;
     [HideInInspector] public string selectedPassword;
 
-    public int totalNamesInHack;
+    private int totalNamesInHack;
 
     public bool passwordFound = false;
-    //[HideInInspector] public bool textSelected = false;
     public GameObject laptopScreen;
 
     private void Start()
     {
         textField = GetComponent<TextMeshProUGUI>();
 
-        GetNamesFromTextFile(dataFile, names);
+        detectiveBirthYear = LocalVariables.GetIntegerValue(7);
+        detectiveName = LocalVariables.GetStringValue(5);
+        totalNamesInHack = LocalVariables.GetIntegerValue(8);
+
+        GetNamesFromTextFile(dataFile, namePool);
 
         HackTextGenerator(false);
     }
@@ -63,7 +67,7 @@ public class PasswordHack : MonoBehaviour
                     }
                     else
                     {
-                        currentText = currentText + "<link>" + names[Random.Range(0, names.Length)] + GetRandomYear(false) + "</link> ";
+                        currentText = currentText + "<link>" + namePool[Random.Range(0, namePool.Length)] + GetRandomYear(false) + "</link> ";
                         textField.text = currentText;
                     }
                 }
@@ -98,7 +102,7 @@ public class PasswordHack : MonoBehaviour
                     }
                     else
                     {
-                        currentText = currentText + "<link>" + names[Random.Range(0, names.Length)] + GetRandomYear(false) + "</link> ";
+                        currentText = currentText + "<link>" + namePool[Random.Range(0, namePool.Length)] + GetRandomYear(false) + "</link> ";
                         textField.text = currentText;
                     }
                 }
@@ -110,12 +114,12 @@ public class PasswordHack : MonoBehaviour
     {
         if (currentPasswordPlace == truePasswordPlace)
         {
-            string password = (characterName + detectiveBirthYear);
+            string password = (detectiveName + detectiveBirthYear);
             return password;
         }
         else
         {
-            string password = characterName;
+            string password = detectiveName;
             GetRandomYear(true);
             return password;
         }
