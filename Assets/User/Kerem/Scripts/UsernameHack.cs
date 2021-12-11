@@ -2,20 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using AC;
 
 public class UsernameHack : MonoBehaviour
 {
     public TextAsset nameDataFile, surnameDataFile;
-    string[] names = new string[1000], surnames = new string[1000];
+    string[] namePool = new string[1000], surnamePool = new string[1000];
 
     private TextMeshProUGUI textField;
     string currentText;
-    public string characterName = "", characterSurname = "";
+    private string characterName, characterSurname;
     string[] currentUsernames = new string[3];
     string mainUsername;
     [HideInInspector] public string selectedUsername;
 
-    public int totalNamesInHack;
+    private int totalNamesInHack;
 
     public bool usernameFound = false;
     //[HideInInspector] public bool textSelected = false;
@@ -25,9 +26,13 @@ public class UsernameHack : MonoBehaviour
     {
         textField = GetComponent<TextMeshProUGUI>();
 
-        GetNamesFromTextFile(nameDataFile, names);
+        characterName = LocalVariables.GetStringValue(5).ToLower();
+        characterSurname = LocalVariables.GetStringValue(6).ToLower();
+        totalNamesInHack = LocalVariables.GetIntegerValue(8);
 
-        GetNamesFromTextFile(surnameDataFile, surnames);
+        GetNamesFromTextFile(nameDataFile, namePool);
+
+        GetNamesFromTextFile(surnameDataFile, surnamePool);
 
         HackTextGenerator(false);
     }
@@ -64,7 +69,7 @@ public class UsernameHack : MonoBehaviour
                     }
                     else
                     {
-                        currentText = currentText + "<link>" + names[Random.Range(0, names.Length)] + "." + surnames[Random.Range(0, surnames.Length)] + "</link> ";
+                        currentText = currentText + "<link>" + namePool[Random.Range(0, namePool.Length)] + "." + surnamePool[Random.Range(0, surnamePool.Length)] + "</link> ";
                         textField.text = currentText;
                     }
                 }
@@ -99,7 +104,7 @@ public class UsernameHack : MonoBehaviour
                     }
                     else
                     {
-                        currentText = currentText + "<link>" + names[Random.Range(0, names.Length)] + "." + surnames[Random.Range(0, surnames.Length)] + "</link> ";
+                        currentText = currentText + "<link>" + namePool[Random.Range(0, namePool.Length)] + "." + surnamePool[Random.Range(0, surnamePool.Length)] + "</link> ";
                         textField.text = currentText;
                     }
                 }
@@ -116,7 +121,7 @@ public class UsernameHack : MonoBehaviour
         }
         else
         {
-            string password = characterName + "." + surnames[Random.Range(0, surnames.Length)];
+            string password = characterName + "." + surnamePool[Random.Range(0, surnamePool.Length)];
             //GetRandomYear(true);
             return password;
         }

@@ -35,13 +35,13 @@ MonoBehaviour:
   referenceScenesInSave: 0
   sceneAttributes: []
   actionListOnStart: {fileID: 0}
-  blackOutWhenSkipping: 0
+  blackOutWhenSkipping: 1
   playerSwitching: 1
   player: {fileID: 0}
   players: []
   movementMethod: 0
   inputMethod: 0
-  interactionMethod: 0
+  interactionMethod: 2
   selectInteractions: 0
   autoHideInteractionIcons: 1
   cancelInteractions: 0
@@ -105,7 +105,7 @@ MonoBehaviour:
   directMovementPerspective: 0
   destinationAccuracy: 0.8
   experimentalAccuracy: 0
-  unityUIClicksAlwaysBlocks: 0
+  unityUIClicksAlwaysBlocks: 1
   pathfindUpdateFrequency: 0
   verticalReductionFactor: 0.7
   rotationsAffectedByVerticalReduction: 1
@@ -164,7 +164,7 @@ MonoBehaviour:
   hotspotIconSize: 0.04
   playerFacesHotspots: 0
   onlyFaceHotspotOnSelect: 0
-  scaleHighlightWithMouseProximity: 0
+  scaleHighlightWithMouseProximity: 1
   highlightProximityFactor: 4
   occludeIcons: 0
   hideIconUnderInteractionMenu: 0
@@ -180,7 +180,7 @@ MonoBehaviour:
   deactivatedLayer: Ignore Raycast
   useLoadingScreen: 0
   manualSceneActivation: 0
-  loadingSceneIs: 0
+  loadingSceneIs: 1
   loadScenesFromAddressable: 0
   loadingSceneName: 
   loadingScene: 0
@@ -215,4 +215,4 @@ MonoBehaviour:
   showDebugLogs: 0
   printActionCommentsInConsole: 0
   actionCommentLogging: 0
-  showActiveActionLists: 0
+  showActiveActionLists: 1

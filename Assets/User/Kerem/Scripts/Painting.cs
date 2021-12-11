@@ -16,34 +16,34 @@ public class Painting : MonoBehaviour
 
     private Vector2 localPointerPosition;
 
-    public GameObject compareImage;
+    private GameObject compareImage;
+
+    public Texture2D imageToPaint;
+
+    private bool canPaint = true;
 
     void Start()
     {
+        compareImage = gameObject.transform.parent.gameObject;
+
         drawSurfaceRectTransform = this.gameObject.GetComponent<RectTransform>();
         drawSurfaceWidth = drawSurfaceRectTransform.rect.width;
         drawSurfaceHeight = drawSurfaceRectTransform.rect.height;
         drawSurfaceTexture = new Texture2D((int)drawSurfaceWidth, (int)drawSurfaceHeight, TextureFormat.RGB24, false);
         this.gameObject.GetComponent<Image>().material.mainTexture = drawSurfaceTexture;
 
-        // Reset all pixels color to transparent
-        Color32 resetColor = new Color32(255, 255, 255, 255);
-        Color32[] resetColorArray = drawSurfaceTexture.GetPixels32();
-
-        for (int i = 0; i < resetColorArray.Length; i++)
-        {
-            resetColorArray[i] = resetColor;
-        }
-
-        drawSurfaceTexture.SetPixels32(resetColorArray);
-        drawSurfaceTexture.Apply();
-
-        //Debug.Log(GetInstanceID() + " - Started");
+        ResetPainting();
     }
 
     void Update()
     {
-        if (Input.GetMouseButton(0) || Input.GetMouseButton(1))
+        if(canPaint)
+            Drawing(drawSurfaceTexture);
+    }
+
+    private void Drawing(Texture2D surfaceTexture)
+    {
+        if (Input.GetMouseButton(0))
         {
             Color drawColor = Color.black;
 
@@ -54,19 +54,38 @@ public class Painting : MonoBehaviour
                 {
                     for (int j = -(drawWidth / 2); j < (drawWidth / 2); j++)
                     {
-                        drawSurfaceTexture.SetPixel((int)(localPointerPosition.x + (drawSurfaceWidth / 2) + i), (int)(localPointerPosition.y + (drawSurfaceHeight / 2) + j), drawColor);
+                        surfaceTexture.SetPixel((int)(localPointerPosition.x + (drawSurfaceWidth / 2) + i), (int)(localPointerPosition.y + (drawSurfaceHeight / 2) + j), drawColor);
                     }
                 }
-                drawSurfaceTexture.Apply();
-                Debug.Log(drawSurfaceTexture.GetInstanceID() + " - Drawn");
-                //Debug.Log(GetInstanceID() + " - Drawn");
+                surfaceTexture.Apply();
             }
         }
 
-        if(Input.GetKeyDown(KeyCode.Return))
+        if (Input.GetKeyDown(KeyCode.Return))
         {
-            SaveTexture(drawSurfaceTexture);
+            canPaint = false;
+            SaveTexture(surfaceTexture);
         }
+    }
+
+    private void OnDisable()
+    {
+        ResetPainting();
+        canPaint = true;
+    }
+
+    public void ResetPainting()
+    {
+        Color[] RefferenceImagePixels = imageToPaint.GetPixels();
+        Color[] drawSurfaceTextureArray = drawSurfaceTexture.GetPixels();
+
+        for (int i = 0; i < RefferenceImagePixels.Length; i++)
+        {
+            drawSurfaceTextureArray[i] = RefferenceImagePixels[i];
+        }
+
+        drawSurfaceTexture.SetPixels(drawSurfaceTextureArray);
+        drawSurfaceTexture.Apply();
     }
 
     private void SaveTexture(Texture2D texture)
