@@ -20,10 +20,12 @@ public class PasswordHack : MonoBehaviour
     private int totalNamesInHack;
 
     public bool passwordFound = false;
-    public GameObject laptopScreen;
+    private GameObject laptopScreen;
 
     private void Start()
     {
+        laptopScreen = gameObject.transform.parent.parent.gameObject;
+
         textField = GetComponent<TextMeshProUGUI>();
 
         detectiveBirthYear = LocalVariables.GetIntegerValue(7);
