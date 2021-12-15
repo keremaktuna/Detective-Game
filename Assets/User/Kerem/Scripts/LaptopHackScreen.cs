@@ -6,10 +6,13 @@ using AC;
 
 public class LaptopHackScreen : MonoBehaviour
 {
-    private GameObject loginScreen, passwordHackButton, usernameHackButton, loginButton;
-    private GameObject usernameHackScreen, passwordHackScreen;
-    private GameObject passwordInputField, usernameInputField;
-    private GameObject desktopCanvas, background;
+    public GameObject loginScreen, passwordHackButton, usernameHackButton, loginButton;
+    public GameObject usernameHackScreen, passwordHackScreen;
+    public GameObject passwordInputField, usernameInputField;
+    public GameObject desktopCanvas, background;
+    private GameObject exitButton;
+
+    public GameObject loginScreenPrefab, desktopCanvasPrefab, usernameHackScreenPrefab, passwordHackScreenPrefab;
 
     public ActionListAsset list;
 
@@ -17,14 +20,27 @@ public class LaptopHackScreen : MonoBehaviour
 
     private void Start()
     {
-        GetVariables();
+        background = gameObject.transform.Find("Background").gameObject;
+        loginScreen = Instantiate(loginScreenPrefab, gameObject.transform);
+        exitButton = gameObject.transform.Find("ExitButton").gameObject;
+        exitButton.transform.SetAsLastSibling();
+
+        usernameHacked = LocalVariables.GetBooleanValue(1);
+        passwordHacked = LocalVariables.GetBooleanValue(0);
     }
 
     public void GetHackedPassword(string password)
     {
-        GetHackedText(passwordHackScreen, passwordInputField, password);
+        //GetHackedText(passwordHackScreen, passwordInputField, password);
         LocalVariables.SetBooleanValue(0, true);
         passwordHacked = true;
+
+        Destroy(passwordHackScreen);
+        loginScreen = Instantiate(loginScreenPrefab, gameObject.transform);
+        exitButton.transform.SetAsLastSibling();
+
+
+        loginScreen.GetComponent<LoginScreen>().HackedPassword(password);
 
         if (usernameHacked)
             loginButton.SetActive(true);
@@ -32,9 +48,16 @@ public class LaptopHackScreen : MonoBehaviour
 
     public void GetHackedUsername(string username)
     {
-        GetHackedText(usernameHackScreen, usernameInputField ,username);
+        //GetHackedText(usernameHackScreen, usernameInputField ,username);
         LocalVariables.SetBooleanValue(1, true);
         usernameHacked = true;
+
+        Destroy(usernameHackScreen);
+        loginScreen = Instantiate(loginScreenPrefab, gameObject.transform);
+        exitButton.transform.SetAsLastSibling();
+
+
+        loginScreen.GetComponent<LoginScreen>().HackedUsername(username);
 
         if (passwordHacked)
             loginButton.SetActive(true);
@@ -43,10 +66,9 @@ public class LaptopHackScreen : MonoBehaviour
     public void OpenDesktop()
     {
         background.SetActive(false);
-        loginScreen.SetActive(false);
-        passwordHackScreen.SetActive(false);
-        usernameHackScreen.SetActive(false);
-        desktopCanvas.SetActive(true);
+        Destroy(loginScreen);
+        Instantiate(desktopCanvasPrefab, gameObject.transform);
+        exitButton.transform.SetAsLastSibling();
     }
 
     public void EnablePasswordButtonOnPress(GameObject currentButton)
@@ -74,7 +96,8 @@ public class LaptopHackScreen : MonoBehaviour
     public IEnumerator CloseButtonWithDelay(GameObject currentButton)
     {
         yield return new WaitForSeconds(3f);
-        currentButton.SetActive(false);
+        if(currentButton != null)
+            currentButton.SetActive(false);
     }
 
     public void DestroyGameObject()
@@ -84,54 +107,17 @@ public class LaptopHackScreen : MonoBehaviour
         Destroy(gameObject);
     }
 
-    private void GetHackedText(GameObject hackScreen, GameObject inputField, string text)
+    public void UsernameHackButton()
     {
-        hackScreen.SetActive(false);
-        loginScreen.SetActive(true);
-        passwordHackButton.SetActive(false);
-        usernameHackButton.SetActive(false);
-        inputField.GetComponent<TMP_InputField>().text = text;
-        inputField.GetComponent<TMP_InputField>().interactable = false;
+        Destroy(loginScreen);
+        Instantiate(usernameHackScreenPrefab, gameObject.transform);
+        exitButton.transform.SetAsLastSibling();
+
     }
 
-    private void GetVariables()
+    public void PasswordHackButton()
     {
-        usernameHacked = LocalVariables.GetBooleanValue(1);
-        passwordHacked = LocalVariables.GetBooleanValue(0);
-
-        loginScreen = gameObject.transform.Find("LoginScreen").gameObject;
-        usernameHackButton = loginScreen.transform.Find("UsernameHackButton").gameObject;
-        passwordHackButton = loginScreen.transform.Find("PasswordHackButton").gameObject;
-        usernameHackScreen = gameObject.transform.Find("UsernameHackCanvas").gameObject;
-        passwordHackScreen = gameObject.transform.Find("PasswordHackCanvas").gameObject;
-        loginButton = loginScreen.transform.Find("LoginButton").gameObject;
-        passwordInputField = loginScreen.transform.Find("PasswordField").gameObject;
-        usernameInputField = loginScreen.transform.Find("UsernameField").gameObject;
-        desktopCanvas = gameObject.transform.Find("DesktopCanvas").gameObject;
-        background = gameObject.transform.Find("Background").gameObject;
-
-        usernameHackButton.SetActive(false);
-        passwordHackButton.SetActive(false);
-        usernameHackScreen.SetActive(false);
-        passwordHackScreen.SetActive(false);
-        loginButton.SetActive(false);
-        desktopCanvas.SetActive(false);
-
-        if (usernameHacked)
-            IsHacked(usernameInputField, LocalVariables.GetStringValue(4));
-
-        if (passwordHacked)
-            IsHacked(passwordInputField, LocalVariables.GetStringValue(3));
-
-        if (usernameHacked && passwordHacked)
-            loginButton.SetActive(true);
-    }
-
-    private void IsHacked(GameObject inputField, string text)
-    {
-        passwordHackButton.SetActive(false);
-        usernameHackButton.SetActive(false);
-        inputField.GetComponent<TMP_InputField>().text = text;
-        inputField.GetComponent<TMP_InputField>().interactable = false;
+        Destroy(loginScreen);
+        Instantiate(passwordHackScreenPrefab, gameObject.transform);
     }
 }

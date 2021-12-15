@@ -20,10 +20,12 @@ public class UsernameHack : MonoBehaviour
 
     public bool usernameFound = false;
     //[HideInInspector] public bool textSelected = false;
-    public GameObject laptopScreen;
+    private GameObject laptopScreen;
 
     private void Start()
     {
+        laptopScreen = gameObject.transform.parent.parent.gameObject;
+
         textField = GetComponent<TextMeshProUGUI>();
 
         characterName = LocalVariables.GetStringValue(5).ToLower();

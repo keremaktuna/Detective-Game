@@ -35,7 +35,7 @@ public class ClickableText : MonoBehaviour, IPointerClickHandler
                     passwordHackScript.selectedPassword = linkID;
                     passwordHackScript.GetClickData(linkID);
                 }
-                else if(usernameHackScript != null)
+                if(usernameHackScript != null)
                 {
                     usernameHackScript.selectedUsername = linkID;
                     usernameHackScript.GetClickData(linkID);

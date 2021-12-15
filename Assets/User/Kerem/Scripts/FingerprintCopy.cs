@@ -6,18 +6,19 @@ using UnityEngine.EventSystems;
 public class FingerprintCopy : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     private GameObject hackText;
-
-    private int imageCompareResult;
+    private DesktopCanvas desktopCanvas;
 
     private void Start()
     {
-        hackText = gameObject.transform.Find("Hack").gameObject;
+        desktopCanvas = gameObject.transform.parent.parent.gameObject.GetComponent<DesktopCanvas>();
+        hackText = gameObject.transform.Find("HackText").gameObject;
         hackText.SetActive(false);
     }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        hackText.SetActive(true);
+        if(!desktopCanvas.isCopying)
+            hackText.SetActive(true);
     }
 
     public void OnPointerExit(PointerEventData eventData)
