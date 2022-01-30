@@ -155,7 +155,6 @@ GameObject:
   - component: {fileID: 6453413955544603022}
   - component: {fileID: 6453413955544603010}
   - component: {fileID: 6453413955544603021}
-  - component: {fileID: 6453413955544603020}
   - component: {fileID: 6453413955544603023}
   m_Layer: 0
   m_Name: Detective
@@ -248,20 +247,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!136 &6453413955544603020
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6453413955544603017}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.17188308
-  m_Height: 1.3590608
-  m_Direction: 1
-  m_Center: {x: -0.047762442, y: -0.020469543, z: 0}
 --- !u!114 &6453413955544603023
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -376,6 +361,7 @@ GameObject:
   - component: {fileID: 6453413957168361730}
   - component: {fileID: 6453413957168361741}
   - component: {fileID: 6453413957168361740}
+  - component: {fileID: 1579942427}
   m_Layer: 2
   m_Name: Detective
   m_TagString: Untagged
@@ -598,8 +584,8 @@ MonoBehaviour:
   turn2DCharactersIn3DSpace: 0
   spriteChild: {fileID: 6453413955544603022}
   rotateSprite3D: 0
-  idleAnimSprite: idle
-  walkAnimSprite: walk
+  idleAnimSprite: sleepingidle
+  walkAnimSprite: pijamawalk
   runAnimSprite: run
   talkAnimSprite: talk
   lockScale: 0
@@ -687,3 +673,17 @@ Rigidbody:
   m_Interpolate: 2
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!136 &1579942427
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6453413957168361743}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.7500813
+  m_Height: 5.8912945
+  m_Direction: 1
+  m_Center: {x: -0.20697641, y: -0.09110975, z: 0}

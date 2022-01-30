@@ -878,7 +878,13 @@ MonoBehaviour:
   - fileName: DialogueSystem
     category: 20
     title: DialogueSystem
-    description: DialogueSystem for game!
+    description: 
+    isEnabled: 1
+    color: {r: 1, g: 1, b: 1, a: 1}
+  - fileName: DisableCharacter
+    category: 20
+    title: DisableCharacter
+    description: 
     isEnabled: 1
     color: {r: 1, g: 1, b: 1, a: 1}
   defaultActionCategoryDatas: []
