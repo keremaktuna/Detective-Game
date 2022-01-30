@@ -41,7 +41,7 @@ MonoBehaviour:
   showOutputSockets: 1
   parentActionListInEditor: {fileID: 0}
   parameterID: -1
-  constantID: 101354
+  constantID: 33080
   hotspot: {fileID: 0}
   affectChildren: 0
   changeType: 0
@@ -68,7 +68,7 @@ MonoBehaviour:
   linkedCutscene: {fileID: 0}
   linkedAsset: {fileID: 0}
   endings:
-  - resultAction: 0
+  - resultAction: 1
     skipAction: -1
     skipActionActual: {fileID: 0}
     linkedCutscene: {fileID: 0}
@@ -86,7 +86,7 @@ MonoBehaviour:
   showOutputSockets: 1
   parentActionListInEditor: {fileID: 0}
   parameterID: -1
-  constantID: 271958
+  constantID: 33114
   hotspot: {fileID: 0}
   affectChildren: 0
   changeType: 0
