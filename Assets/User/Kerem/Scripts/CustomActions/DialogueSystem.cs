@@ -15,7 +15,7 @@ namespace AC
 		// Declare properties here
 		public override ActionCategory Category { get { return ActionCategory.Custom; }}
 		public override string Title { get { return "DialogueSystem"; }}
-		public override string Description { get { return "DialogueSystem for game!"; }}
+		public override string Description { get { return ""; }}
 
 
 		// Declare variables here
