@@ -813,6 +813,7 @@ GameObject:
   - component: {fileID: 5763652595940637395}
   - component: {fileID: 3839091947326393304}
   - component: {fileID: 1750603633689072472}
+  - component: {fileID: 6838930524676628094}
   m_Layer: 0
   m_Name: DesktopCanvas
   m_TagString: Untagged
@@ -919,6 +920,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   profilePrefab: {fileID: 3622825623380397366, guid: de92ce72f640a634e9af2b1717914945, type: 3}
   isCopying: 0
+--- !u!114 &6838930524676628094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5881227952965469232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f72e60470f1fa4fd1825cd67ce482cf6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  constantID: 55646
+  retainInPrefab: 1
+  autoManual: 0
 --- !u!1 &5948571644756731431
 GameObject:
   m_ObjectHideFlags: 0

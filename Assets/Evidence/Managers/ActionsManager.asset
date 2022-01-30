@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: ActionsManager
   m_EditorClassIdentifier: 
   customFolderPaths:
+  - User/Kerem/Scripts/CustomActions
   - 
   allFavouriteActionData: []
   displayActionsInInspector: 1
@@ -872,6 +873,12 @@ MonoBehaviour:
       forumla (e.g. 2 + 3 *4), which can also include tokens of the form [var:ID]
       to denote the value of a Variable, where ID is the unique number given to a
       Variable in the Variables Manager.
+    isEnabled: 1
+    color: {r: 1, g: 1, b: 1, a: 1}
+  - fileName: DialogueSystem
+    category: 20
+    title: DialogueSystem
+    description: DialogueSystem for game!
     isEnabled: 1
     color: {r: 1, g: 1, b: 1, a: 1}
   defaultActionCategoryDatas: []
