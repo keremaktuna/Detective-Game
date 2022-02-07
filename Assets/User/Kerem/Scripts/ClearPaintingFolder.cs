@@ -8,6 +8,6 @@ public class ClearPaintingFolder : MonoBehaviour
 {
     private void OnApplicationQuit()
     {
-        FileUtil.DeleteFileOrDirectory(Application.dataPath + "/RenderOutput");
+        //FileUtil.DeleteFileOrDirectory(Application.dataPath + "/RenderOutput");
     }
 }

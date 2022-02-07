@@ -5,7 +5,7 @@ using AC;
 
 public class PhoneHackScreen : MonoBehaviour
 {
-    public ActionListAsset list;
+    public ActionListAsset list, afterWake;
 
     private GameObject lockScreen, fingerprintHackScreen, phoneHomeScreen;
 
@@ -19,6 +19,12 @@ public class PhoneHackScreen : MonoBehaviour
 
         fingerprintHackScreen.SetActive(false);
         phoneHomeScreen.SetActive(false);
+    }
+
+    public void SmartHomeButton(GameObject obj)
+    {
+        afterWake.Interact();
+        Destroy(obj);
     }
 
     public void FingerprintButton()

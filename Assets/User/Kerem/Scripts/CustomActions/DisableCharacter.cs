@@ -44,7 +44,7 @@ namespace AC
 			if (!isRunning)
 			{
 				isRunning = true;
-				objectToAffect.SetActive(!objectToAffect.activeSelf);
+				objectToAffect.transform.GetChild(0).gameObject.SetActive(false);
 
 				return defaultPauseTime;
 			}
