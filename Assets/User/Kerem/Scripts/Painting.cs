@@ -117,4 +117,10 @@ public class Painting : MonoBehaviour
 
         compareImage.GetComponent<ImageCompare>().getImage(imageConvert);
     }
+
+    public void SaveImage()
+    {
+        canPaint = false;
+        SaveTexture(drawSurfaceTexture);
+    }
 }

@@ -58,7 +58,7 @@ public class UsernameHack : MonoBehaviour
                             currentUsernames.SetValue(usernameGenerator(i, truePasswordPlace), i);
                             string rawPassword = currentUsernames[i];
                             mainUsername = rawPassword;
-                            rawPassword = "<link><color=red>" + rawPassword + "</color></link>";
+                            rawPassword = "<link><color=green>" + rawPassword + "</color></link>";
                             currentText = currentText + rawPassword + " ";
                         }
                         else

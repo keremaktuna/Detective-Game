@@ -875,6 +875,12 @@ MonoBehaviour:
       Variable in the Variables Manager.
     isEnabled: 1
     color: {r: 1, g: 1, b: 1, a: 1}
+  - fileName: ChangeArea
+    category: 20
+    title: ChangeArea
+    description: 
+    isEnabled: 1
+    color: {r: 1, g: 1, b: 1, a: 1}
   - fileName: DialogueSystem
     category: 20
     title: DialogueSystem
@@ -884,6 +890,12 @@ MonoBehaviour:
   - fileName: DisableCharacter
     category: 20
     title: DisableCharacter
+    description: 
+    isEnabled: 1
+    color: {r: 1, g: 1, b: 1, a: 1}
+  - fileName: EnableCharacter
+    category: 20
+    title: EnableCharacter
     description: 
     isEnabled: 1
     color: {r: 1, g: 1, b: 1, a: 1}

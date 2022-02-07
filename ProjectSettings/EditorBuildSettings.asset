@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/User/Kerem/Scene/MainLevel.unity
+    guid: 10ffb80a9bbe3094998cb08407ea9990
   m_configObjects: {}
