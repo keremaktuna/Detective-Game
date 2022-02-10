@@ -168,7 +168,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -248.7001, y: -244.39998}
+  m_AnchoredPosition: {x: -248.7, y: -252}
   m_SizeDelta: {x: 256, y: 256}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3053180871342623243
@@ -299,6 +299,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2157b2d34f668e641abd2cfe3c291123, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  videoImage: {fileID: 0}
 --- !u!1 &4769498389133295809
 GameObject:
   m_ObjectHideFlags: 0
@@ -556,7 +557,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -248.7, y: -244.4}
+  m_AnchoredPosition: {x: -248.7, y: -252}
   m_SizeDelta: {x: 454, y: 428}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8682942564167880138

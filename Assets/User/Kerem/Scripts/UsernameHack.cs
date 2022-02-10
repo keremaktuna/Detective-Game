@@ -93,7 +93,7 @@ public class UsernameHack : MonoBehaviour
                         if (truePasswordPlace == i)
                         {
                             string rawPassword = mainUsername;
-                            rawPassword = "<link><color=red>" + rawPassword + "</color></link>";
+                            rawPassword = "<link><color=green>" + rawPassword + "</color></link>";
                             currentText = currentText + rawPassword + " ";
                         }
                         else

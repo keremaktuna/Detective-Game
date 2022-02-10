@@ -21,7 +21,8 @@ public class DetectiveProfile : MonoBehaviour
     public void FingerprintButton()
     {
         if(!desktopCanvas.isCopying)
-            StartCoroutine(FingerprintCopyProcess());
+            if (LocalVariables.GetBooleanValue(9) == false)
+                StartCoroutine(FingerprintCopyProcess());
     }
 
     IEnumerator FingerprintCopyProcess()
@@ -30,9 +31,9 @@ public class DetectiveProfile : MonoBehaviour
         videoPlayer.frame = 1;
         videoPlayer.Play();
         desktopCanvas.isCopying = true;
+        LocalVariables.SetBooleanValue(9, true);
         yield return new WaitForSeconds(7.1f);
         desktopCanvas.isCopying = false;
         videoImage.SetActive(false);
-        LocalVariables.SetBooleanValue(9, true);
     }
 }
