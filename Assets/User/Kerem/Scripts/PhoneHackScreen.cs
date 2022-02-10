@@ -11,6 +11,8 @@ public class PhoneHackScreen : MonoBehaviour
 
     private float imageCompareResult;
 
+    public GameObject smartHomeApp, musicApp, alarmApp;
+
     private void Start()
     {
         lockScreen = gameObject.transform.Find("LockScreen").gameObject;
@@ -21,10 +23,42 @@ public class PhoneHackScreen : MonoBehaviour
         phoneHomeScreen.SetActive(false);
     }
 
-    public void SmartHomeButton(GameObject obj)
+    public void SmartHomeSuccess(GameObject obj)
     {
         afterWake.Interact();
         Destroy(obj);
+    }
+
+    public void SmartHomeButton(/*GameObject obj*/)
+    {
+        /*afterWake.Interact();
+        Destroy(obj);*/
+        smartHomeApp.SetActive(true);
+    }
+
+    public void AlarmButton()
+    {
+        alarmApp.SetActive(true);
+    }
+
+    public void MusicButton()
+    {
+        musicApp.SetActive(true);
+    }
+
+    public void CloseSmartHomeButton()
+    {
+        smartHomeApp.SetActive(false);
+    }
+
+    public void CloseAlarmButton()
+    {
+        alarmApp.SetActive(false);
+    }
+
+    public void CloseMusicButton()
+    {
+        musicApp.SetActive(false);
     }
 
     public void FingerprintButton()

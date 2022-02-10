@@ -212,7 +212,7 @@ MonoBehaviour:
   showOutputSockets: 1
   parentActionListInEditor: {fileID: 0}
   objectToAffect: {fileID: 0}
-  textToPrint: "<color=#084DAE> Sonunda uyanabilidin Tony, ben senin yeni orta\u011F\u0131n\u0131m</color>"
+  textToPrint: <color=#00E6FF> You finally woke up Tony, I'm your new partner. </color>
   constantID: 54410
   parameterID: -1
 --- !u!114 &-7451389312015282547
@@ -387,7 +387,7 @@ MonoBehaviour:
   showOutputSockets: 1
   parentActionListInEditor: {fileID: 0}
   objectToAffect: {fileID: 0}
-  textToPrint: "<color=#4D3409>Tuvaletin i\xE7ine de gelmek ister misin  !*#?</color>"
+  textToPrint: <color=#FFB708> Do you want to come inside the toilet too !*#? </color>
   constantID: 54410
   parameterID: -1
 --- !u!114 &-5741644050950989861
@@ -431,8 +431,7 @@ MonoBehaviour:
   showOutputSockets: 1
   parentActionListInEditor: {fileID: 0}
   objectToAffect: {fileID: 0}
-  textToPrint: "<color=#084DAE> Ben seni hala duyabiliyorum, asl\u0131nda g\xF6rebiliyorum
-    da.</color>"
+  textToPrint: <color=#00E6FF> I can still hear you, actually I can see you. </color>
   constantID: 54410
   parameterID: -1
 --- !u!114 &-5682244474804908386
@@ -751,7 +750,8 @@ MonoBehaviour:
   showOutputSockets: 1
   parentActionListInEditor: {fileID: 0}
   objectToAffect: {fileID: 0}
-  textToPrint: "<color=#084DAE>Hadi acele et, daha fazla bekleyemeyece\u011Fim!</color>"
+  textToPrint: <color=#00E6FF> Now come on, hurry up, I can't wait you any longer!
+    </color>
   constantID: 54410
   parameterID: -1
 --- !u!114 &-691621930165197247
@@ -1257,7 +1257,7 @@ MonoBehaviour:
   showOutputSockets: 1
   parentActionListInEditor: {fileID: 0}
   objectToAffect: {fileID: 0}
-  textToPrint: <color=#4D3409>Noluyor ya !*#?</color>
+  textToPrint: <color=#FFB708>What the !*# is going on? </color>
   constantID: 54410
   parameterID: -1
 --- !u!114 &3183361981659302295
@@ -1461,8 +1461,8 @@ MonoBehaviour:
   showOutputSockets: 1
   parentActionListInEditor: {fileID: 0}
   objectToAffect: {fileID: 0}
-  textToPrint: "<color=#4D3409>!*# her \u015Feyimi hacklemi\u015F, departman buna
-    nas\u0131l izin veriyor?</color>"
+  textToPrint: <color=#FFB708>!*# hacked my everything, how does the department allow
+    this? </color>
   constantID: 54410
   parameterID: -1
 --- !u!114 &6363605561821895102
@@ -1506,8 +1506,8 @@ MonoBehaviour:
   showOutputSockets: 1
   parentActionListInEditor: {fileID: 0}
   objectToAffect: {fileID: 0}
-  textToPrint: "<color=#084DAE>Neden olmas\u0131n? Hatta bende kalmas\u0131 i\xE7in
-    foto\u011Fraf\u0131n\u0131 da \xE7ekerim.</color>"
+  textToPrint: <color=#00E6FF> Why not? I even take a picture of it to keep it with
+    me. </color>
   constantID: 54410
   parameterID: -1
 --- !u!114 &7736276526692568989

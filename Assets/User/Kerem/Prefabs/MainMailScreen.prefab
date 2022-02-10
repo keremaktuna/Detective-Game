@@ -111,6 +111,14 @@ PrefabInstance:
       propertyPath: acList
       value: 
       objectReference: {fileID: 11400000, guid: 072d7a2bbae997d408346201b9d97263, type: 2}
+    - target: {fileID: 2300037438409222907, guid: 9bf3a280496a4ea4abf523a0d2f54b9d, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.000023127
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300037438409222907, guid: 9bf3a280496a4ea4abf523a0d2f54b9d, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -49
+      objectReference: {fileID: 0}
     - target: {fileID: 2300037438768534024, guid: 9bf3a280496a4ea4abf523a0d2f54b9d, type: 3}
       propertyPath: m_Name
       value: MailScreen

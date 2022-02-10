@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using AC;
 
 public class FingerprintCopy : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
@@ -18,7 +19,12 @@ public class FingerprintCopy : MonoBehaviour, IPointerEnterHandler, IPointerExit
     public void OnPointerEnter(PointerEventData eventData)
     {
         if(!desktopCanvas.isCopying)
-            hackText.SetActive(true);
+        {
+            if(LocalVariables.GetBooleanValue(9) == false)
+            {
+                hackText.SetActive(true);
+            }
+        }
     }
 
     public void OnPointerExit(PointerEventData eventData)

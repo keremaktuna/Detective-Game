@@ -154,9 +154,9 @@ RectTransform:
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 100}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 959.86, y: 0}
+  m_SizeDelta: {x: 1920, y: 80}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!222 &1483656273443376317
 CanvasRenderer:
@@ -186,7 +186,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 3f2af41b30a67a246a09327affa859a0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 695c47d88f78903489d38996a4dfae32, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -528,9 +528,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Folder
-
-'
+  m_text: Profile
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1146,7 +1144,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 9ff2e43d9e14be140867c18817b25094, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6a4bed54545003845b9cfcd2e8ab579e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
